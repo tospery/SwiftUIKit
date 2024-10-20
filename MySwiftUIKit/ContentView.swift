@@ -13,6 +13,7 @@ struct ContentView: View {
         NavigationStack {
             Form {
                 loading
+                navigation
             }
         }
     }
@@ -24,8 +25,25 @@ struct ContentView: View {
                     MyDotLoadingAnimationView(store: store)
                 }
             }
+            NavigationLink("DotLoadingAnimationText") {
+                Demo(store: Store(initialState: MyDotLoadingAnimationTextReducer.State()) { MyDotLoadingAnimationTextReducer() }) { store in
+                    MyDotLoadingAnimationTextView(store: store)
+                }
+            }
         } header: {
             Text("Loading")
+        }
+    }
+    
+    var navigation: some View {
+        Section {
+            NavigationLink("NavigationButton") {
+                Demo(store: Store(initialState: MyNavigationButtonReducer.State()) { MyNavigationButtonReducer() }) { store in
+                    MyNavigationButtonView(store: store)
+                }
+            }
+        } header: {
+            Text("Navigation")
         }
     }
 }
