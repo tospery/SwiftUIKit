@@ -1,22 +1,36 @@
 {
   "name": "SwiftUIKit-Hi",
-  "version": "0.1.0",
-  "summary": "A short description of SwiftUIKit-Hi.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/tospery/SwiftUIKit-Hi",
+  "version": "5.0.0-v1",
+  "summary": "A library providing SwiftUI extensions and utilities.",
+  "description": "A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, offering useful SwiftUI extensions and utilities.",
+  "homepage": "https://github.com/tospery/SwiftUIKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "tospery": "tospery@gmail.com"
+    "YangJianxiang": "tospery@gmail.com"
   },
   "source": {
-    "git": "https://github.com/tospery/SwiftUIKit-Hi.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/tospery/SwiftUIKit.git",
+    "tag": "5.0.0-v1"
   },
+  "requires_arc": true,
+  "swift_versions": "5.0",
   "platforms": {
-    "ios": "15.0"
+    "ios": "15.0",
+    "tvos": "15.0",
+    "watchos": "8.0",
+    "osx": "12.0"
   },
-  "source_files": "Sources/**/*"
+  "frameworks": [
+    "Foundation",
+    "UIKit",
+    "SwiftUI"
+  ],
+  "source_files": "Sources/SwiftUIKit/**/*.{swift}",
+  "resources": [
+    "Sources/SwiftUIKit/Resources/*"
+  ],
+  "swift_version": "5.0"
 }

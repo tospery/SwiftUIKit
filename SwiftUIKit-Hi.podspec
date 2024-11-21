@@ -1,42 +1,24 @@
-#
-# Be sure to run `pod lib lint SwiftUIKit-Hi.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'SwiftUIKit-Hi'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftUIKit-Hi.'
+  s.name         = 'SwiftUIKit-Hi'
+  s.version      = '5.0.0-v1'
+  s.summary      = 'A library providing SwiftUI extensions and utilities.'
+  s.description  = <<-DESC
+A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, offering useful SwiftUI extensions and utilities.
+					DESC
+  s.homepage     = 'https://github.com/tospery/SwiftUIKit'
+  s.license      = { :type => 'MIT', :file => 'LICENSE' }
+  s.author       = { 'YangJianxiang' => 'tospery@gmail.com' }
+  s.source       = { :git => 'https://github.com/tospery/SwiftUIKit.git', :tag => s.version.to_s }
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/tospery/SwiftUIKit-Hi'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'tospery' => 'tospery@gmail.com' }
-  s.source           = { :git => 'https://github.com/tospery/SwiftUIKit-Hi.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.requires_arc = true
+  s.swift_version = '5.0'
   s.ios.deployment_target = '15.0'
+  s.tvos.deployment_target = '15.0'
+  s.watchos.deployment_target = '8.0'
+  s.osx.deployment_target = '12.0'
 
-  s.source_files = 'Sources/**/*'
-  
-  # s.resource_bundles = {
-  #   'SwiftUIKit-Hi' => ['SwiftUIKit-Hi/Assets/*.png']
-  # }
+  s.frameworks = 'Foundation', 'UIKit', 'SwiftUI'
+  s.source_files = "Sources/SwiftUIKit/**/*.{swift}"
+  s.resources    = ["Sources/SwiftUIKit/Resources/*"]
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
