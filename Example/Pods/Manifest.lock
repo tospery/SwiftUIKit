@@ -1,0 +1,16 @@
+PODS:
+  - SwiftUIKit-Hi (0.1.0)
+
+DEPENDENCIES:
+  - SwiftUIKit-Hi (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftUIKit-Hi:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwiftUIKit-Hi: 65d75c238c67c30cf420b4b2aa2612163427452f
+
+PODFILE CHECKSUM: f356040ebb4633d2ca8688e6e405f612c59a1192
+
+COCOAPODS: 1.15.2
