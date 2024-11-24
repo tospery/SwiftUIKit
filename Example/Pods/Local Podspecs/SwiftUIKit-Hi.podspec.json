@@ -29,8 +29,5 @@
     "SwiftUI"
   ],
   "source_files": "Sources/SwiftUIKit/**/*.{swift}",
-  "resources": [
-    "Sources/SwiftUIKit/Resources/*"
-  ],
   "swift_version": "5.0"
 }

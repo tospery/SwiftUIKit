@@ -76,22 +76,3 @@ private extension View {
     }
 }
 
-#if os(iOS)
-#Preview {
-    
-    struct Preview: View {
-        
-        @State private var font = ""
-        
-        var body: some View {
-            NavigationView {
-                SystemFontListPicker(
-                    selectedFontName: $font)
-                .withTitle("Pick a font")
-            }
-        }
-    }
-    
-    return Preview()
-}
-#endif

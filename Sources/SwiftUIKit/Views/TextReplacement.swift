@@ -31,14 +31,3 @@ public struct TextReplacement: View {
     }
 }
 
-#Preview {
-    
-    TextReplacement(
-        "This view creates views that create views.",
-        replace: "view"
-    ) {
-        Text($0)
-            .font(.title)
-            .underline()
-    }
-}

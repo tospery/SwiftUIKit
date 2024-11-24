@@ -60,29 +60,4 @@ private extension TextEditor {
             .stroke(color, lineWidth: lineWidth)
     }
 }
-
-#Preview {
-    
-    struct Preview: View {
-        
-        @State
-        var text: String = "Hello, world"
-        
-        var body: some View {
-            VStack {
-                TextField("", text: $text)
-                    .textFieldStyle(.roundedBorder)
-                TextEditor(text: $text)
-                    .textEditorStyle(.roundedBorder)
-                TextEditor(text: $text)
-                    .textEditorStyle(.roundedColorBorder(.red, 5))
-            }
-            .padding(10)
-            .background(Color.primary.colorInvert())
-            // .environment(\.colorScheme, .dark)
-        }
-    }
-    
-    return Preview()
-}
 #endif

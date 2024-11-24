@@ -140,32 +140,3 @@ private extension View {
     }
 }
 
-
-#Preview {
-    
-    struct Preview: View {
-        
-        @State
-        private var isFlipped = false
-        
-        var body: some View {
-            flipView
-                .cornerRadius(10)
-                .shadow(radius: 0, x: 0, y: 2)
-                .padding()
-        }
-
-        var flipView: some View {
-            FlipView(
-                front: Color.green,
-                back: Color.red,
-                isFlipped: $isFlipped,
-                flipDuration: 0.5,
-                tapDirection: .right,
-                swipeDirections: [.left, .right, .up, .down]
-            )
-        }
-    }
-    
-    return Preview()
-}

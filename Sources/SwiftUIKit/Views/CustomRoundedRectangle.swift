@@ -60,17 +60,3 @@ public struct CustomRoundedRectangle: Shape {
         return path
     }
 }
-
-#Preview {
-    
-    VStack {
-        CustomRoundedRectangle(
-            topLeft: 10,
-            topRight: 20,
-            bottomLeft: 30,
-            bottomRight: 40
-        )
-        .foregroundColor(.red)
-    }
-    .padding()
-}

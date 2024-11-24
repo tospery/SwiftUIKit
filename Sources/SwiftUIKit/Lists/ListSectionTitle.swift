@@ -54,12 +54,3 @@ private extension View {
         }
     }
 }
-
-#Preview {
-
-    List {
-        Section(header: Text("Preview.SectionTitle", bundle: .module)) {
-            ListSectionTitle("Preview.SectionTitle", bundle: .module)
-        }
-    }
-}

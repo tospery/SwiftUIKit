@@ -67,25 +67,3 @@ private extension PageIndicator {
     }
 }
 
-#Preview {
-    
-    VStack(spacing: 20) {
-        PageIndicator(
-            numberOfPages: 10,
-            currentPageIndex: .constant(3)
-        )
-        
-        PageIndicator(
-            numberOfPages: 5,
-            currentPageIndex: .constant(3)
-        )
-        .pageIndicatorStyle(.init(
-            dotColor: .blue,
-            dotSpacing: 20,
-            currentDotColor: .yellow
-        ))
-    }
-    .padding()
-    .background(Color.gray)
-    .cornerRadius(20)
-}

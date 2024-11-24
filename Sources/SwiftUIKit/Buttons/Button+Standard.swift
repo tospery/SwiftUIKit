@@ -20,7 +20,7 @@ public extension Button {
     ) where Label == SwiftUI.Label<Text, Image?> {
         self.init(role: type.role, action: action) {
             Label(
-                title: { Text(title ?? type.title, bundle: title == nil ? .module : bundle) },
+                title: { Text(title ?? type.title, bundle: title == nil ? .main : bundle) },
                 icon: { icon ?? type.image }
             )
         }
@@ -101,27 +101,4 @@ public extension Button.StandardType {
         }
     }
 }
-/*
-#Preview {
-    
-    @ViewBuilder
-    func buttons() -> some View {
-        Section {
-            ForEach(Button.StandardType.allCases) { type in
-                Button(type) { print("Tapped \(type.title)") }
-            }
-        }
-    }
-    
-    return List {
-        buttons()
-        buttons().labelStyle(.titleOnly)
-        buttons().labelStyle(.iconOnly)
-    }
-    .toolbar {
-        ToolbarItemGroup {
-            buttons()
-        }
-    }
-}
-*/
+

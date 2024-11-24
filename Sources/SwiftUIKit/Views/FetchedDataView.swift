@@ -57,24 +57,3 @@ public struct FetchedDataView<Model, Content: View, LoadingView: View, NoDataVie
     }
 }
 
-#Preview {
-    
-    struct Preview: View {
-        
-        let nilData: String? = nil
-        let content: (String) -> AnyView = { Text($0).any() }
-        let loadingView = Text("Preview.Loading")
-        let noDataView = Text("Preview.NoData")
-        
-        var body: some View {
-            Group {
-                FetchedDataView(data: "Fetched data", isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
-                FetchedDataView(data: "Fetched data", isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
-                FetchedDataView(data: nilData, isLoading: true, loadingView: loadingView, noDataView: noDataView, content: content)
-                FetchedDataView(data: nilData, isLoading: false, loadingView: loadingView, noDataView: noDataView, content: content)
-            }
-        }
-    }
-    
-    return Preview()
-}

@@ -99,18 +99,3 @@ private extension ListAction {
     }
 }
 
-#Preview {
-    
-    func view(for action: ListAction) -> some View {
-        action.button
-    }
-    
-    return List {
-        view(for: .call(phoneNumber: "abc123"))
-        #if os(macOS) || os(iOS)
-        view(for: .copy("abc123"))
-        #endif
-        view(for: .email(address: "abc123"))
-        view(for: .open(url: "https://danielsaidi.com"))
-    }
-}

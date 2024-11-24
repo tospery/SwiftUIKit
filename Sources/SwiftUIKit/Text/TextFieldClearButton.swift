@@ -59,32 +59,4 @@ public extension TextField {
         )
     }
 }
-
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var text = ""
-        
-        var placeholder: String {
-            .init(localized: "Preview.Placeholder", bundle: .module)
-        }
-
-        var body: some View {
-            VStack {
-                TextField(placeholder, text: $text)
-                    .withClearButton(for: $text)
-                TextField(placeholder, text: $text)
-                    .withClearButton(
-                        for: $text,
-                        .bouncy(duration: 1, extraBounce: 0.1)
-                    )
-            }
-            .textFieldStyle(.roundedBorder)
-        }
-    }
-
-    return Preview()
-}
 #endif

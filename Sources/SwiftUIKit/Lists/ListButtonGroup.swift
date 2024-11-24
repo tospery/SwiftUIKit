@@ -43,46 +43,6 @@ public struct ListButtonGroup<Content: View>: View {
     }
 }
 
-#Preview {
-    
-    struct PreviewList: View {
-        
-        var body: some View {
-            List {
-                "Add something".previewButton(.add)
-                
-                ListButtonGroup {
-                    HStack {
-                        "Bug".previewButton(.bug)
-                        "Camera".previewButton(.camera).disabled(true)
-                        "Photos".previewButton(.camera).opacity(0.5)
-                        "Feedback".previewButton(.feedback)
-                    }
-                }
-                
-                Section {
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                }
-            }
-        }
-    }
-    
-    return VStack(spacing: 0) {
-        PreviewList()
-        Divider()
-        PreviewList()
-            .listButtonGroupStyle(.swedish)
-        Divider()
-        PreviewList()
-            .environment(\.colorScheme, .dark)
-    }
-    .frame(maxHeight: .infinity)
-    .background(Color.black.opacity(0.08).ignoresSafeArea())
-}
-
 private extension ButtonStyle where Self == ListButtonGroupStyle {
     
     static var swedish: Self {

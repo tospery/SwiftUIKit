@@ -90,54 +90,6 @@ private extension LinearProgressBar {
     }
 }
 
-
-// MARK: - Previews
-
-#Preview {
-
-    struct Preview: View {
-
-        let style: LinearProgressBar.Style
-
-        @State
-        private var progress = 0.5
-
-        var body: some View {
-            VStack(spacing: 30) {
-                LinearProgressBar(progress: progress)
-                    .linearProgressBarStyle(style)
-                #if os(iOS) || os(macOS) || os(watchOS)
-                    .onTapGesture {
-                        progress += 0.1
-                    }
-                #endif
-            }
-        }
-    }
-
-    return ZStack {
-        LinearGradient(
-            colors: [Color.pink, Color.purple],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing)
-        Image(systemName: "theatermasks")
-            .symbolRenderingMode(.hierarchical)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-        VStack(spacing: 30) {
-            ProgressView(value: 0.5)
-                .progressViewStyle(.linear)
-            Preview(style: .standard)
-            Preview(style: .padding)
-            Preview(style: .tallPadding)
-            Preview(style: .swedish)
-            Preview(style: .swedishFrosted)
-                .shadow(.elevated)
-        }
-        .padding(50)
-    }
-}
-
 private extension LinearProgressBar.Style {
 
     static var swedish: LinearProgressBar.Style {

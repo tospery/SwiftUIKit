@@ -37,14 +37,3 @@ public extension View {
         }
     }
 }
-
-#Preview {
-    
-    VStack {
-        Color.red
-            .label("Preview.Label", bundle: .module)
-        Image.symbol("checkmark")
-            .label("Preview.Label", bundle: .module)
-    }
-    .frame(width: 200, height: 100)
-}

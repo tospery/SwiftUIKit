@@ -63,25 +63,3 @@ private struct User: Codable, Identifiable {
     var id: String { name }
 }
 
-#Preview {
-
-    struct Preview: View {
-
-        @AppStorage("com.swiftuikit.appstorage.user")
-        var user: AppStorageValue<User>?
-
-        var body: some View {
-            Text(user?.value.name ?? "-")
-
-            Button("Toggle user") {
-                if user == nil {
-                    user = .init(User(name: "Daniel", age: 45))
-                } else {
-                    user = nil
-                }
-            }
-        }
-    }
-
-    return Preview()
-}

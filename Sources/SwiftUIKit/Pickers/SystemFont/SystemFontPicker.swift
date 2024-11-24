@@ -88,22 +88,6 @@ private extension SystemFontPickerFont {
     }
 }
 
-#Preview {
-    
-    struct Preview: View {
-        
-        @State private var font = ""
-        
-        var body: some View {
-            SystemFontPicker(selectedFontName: $font)
-                .withStyle()
-                .padding(20)
-        }
-    }
-    
-    return Preview()
-}
-
 private extension View {
     
     @ViewBuilder

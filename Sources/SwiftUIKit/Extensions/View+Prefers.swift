@@ -34,17 +34,3 @@ public extension View {
         }
     }
 }
-
-#Preview {
-
-    VStack {
-        #if os(iOS) || os(macOS)
-        Menu("Preview.Menu") {
-            Button("Preview.Button.\(1)") {}
-            Button("Preview.Button.\(2)") {}
-        }
-        .prefersMenuOrderFixed()
-        #endif
-    }
-    .prefersPersistentSystemOverlaysHidden()
-}

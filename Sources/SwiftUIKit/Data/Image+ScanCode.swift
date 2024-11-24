@@ -71,14 +71,4 @@ private extension ImageRepresentable {
     }
 }
 #endif
-
-#Preview {
-    
-    VStack {
-        Image(scanCode: "123456789", type: .aztek, scale: 5)
-        Image(scanCode: "123456789", type: .code128, scale: 2)
-        Image(scanCode: "123456789", type: .pdf417, scale: 2)
-        Image(scanCode: "123456789", type: .qr, scale: 5)
-    }
-}
 #endif

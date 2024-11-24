@@ -42,28 +42,4 @@ private extension ListDragHandle {
         !isEditing
     }
 }
-
-#Preview {
-
-    NavigationView {
-        List {
-            ForEach(1...10, id: \.self) { item in
-                HStack {
-                    Label {
-                        Text("Preview.Item.\(item)", bundle: .module)
-                    } icon: {
-                        Color.red
-                    }
-                    Spacer()
-                    ListDragHandle()
-                }
-            }
-            .onMove { _, _ in }
-            .onDelete { _ in }
-        }
-        .toolbar {
-            EditButton()
-        }
-    }
-}
 #endif

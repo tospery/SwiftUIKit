@@ -61,24 +61,3 @@ public struct SystemFontForEachPicker: View {
         }
     }
 }
-
-#if os(iOS)
-#Preview {
-    
-    struct Preview: View {
-        
-        @State private var font = ""
-        
-        var body: some View {
-            NavigationView {
-                List {
-                    SystemFontForEachPicker(
-                        selectedFontName: $font)
-                }
-            }
-        }
-    }
-    
-    return Preview()
-}
-#endif

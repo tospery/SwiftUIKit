@@ -29,17 +29,3 @@ public extension Color {
     }
 }
 
-
-#Preview {
-
-    func preview(for color: Color) -> some View {
-        color.cornerRadius(10)
-    }
-
-    return VStack {
-        preview(for: .random())
-        preview(for: .random(randomOpacity: true))
-        preview(for: .random(in: 0...0.3))
-        preview(for: .random(in: 0...0.3, randomOpacity: true))
-    }.padding()
-}

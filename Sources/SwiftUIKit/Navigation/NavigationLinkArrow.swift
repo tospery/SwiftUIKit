@@ -56,24 +56,3 @@ private extension NavigationLinkArrow {
     }
 }
 
-#Preview {
-    
-    NavigationView {
-        List {
-            NavigationLink {
-                Text("Preview.Text", bundle: .module)
-            } label: {
-                Text("Preview.Link", bundle: .module)
-            }
-
-            NavigationLink("Preview.Link") {
-                Color.red
-            }
-            NavigationButton {} content: {
-                Text("Preview.Text", bundle: .module)
-            }
-            NavigationLinkArrow()
-        }
-    }
-    .foregroundColor(.red)
-}

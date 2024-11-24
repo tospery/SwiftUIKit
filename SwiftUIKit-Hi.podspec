@@ -19,6 +19,5 @@ A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, 
 
   s.frameworks = 'Foundation', 'UIKit', 'SwiftUI'
   s.source_files = "Sources/SwiftUIKit/**/*.{swift}"
-  s.resources    = ["Sources/SwiftUIKit/Resources/*"]
 
 end
