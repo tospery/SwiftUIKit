@@ -16,3 +16,8 @@ Fastlane/Preview.html
 Fastlane/screenshots
 Fastlane/test_output
 Fastlane/README.md
+
+# Cocoapods
+Example/Pods/
+Example/Podfile.lock
+Example/*.xcworkspace
