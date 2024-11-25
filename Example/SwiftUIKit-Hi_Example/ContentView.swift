@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit_Hi
 
 struct ContentView: View {
     var body: some View {
@@ -16,6 +17,11 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onTapGesture {
+//            let bundle = Bundle.module
+//            let string = NSLocalizedString("Preview.Text.Long", bundle: bundle, comment: "")
+//            print("string: \(string)")
+        }
     }
 }
 

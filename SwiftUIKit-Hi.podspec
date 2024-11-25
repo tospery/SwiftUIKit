@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SwiftUIKit-Hi'
-  s.version      = '5.0.0-v1'
+  s.version      = '5.0.0-v2'
   s.summary      = 'A library providing SwiftUI extensions and utilities.'
   s.description  = <<-DESC
 A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, offering useful SwiftUI extensions and utilities.
@@ -16,5 +16,6 @@ A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, 
 
   s.frameworks = 'Foundation', 'UIKit', 'SwiftUI'
   s.source_files = "Sources/SwiftUIKit/**/*.{swift}"
+  s.resource_bundles = {'Resources' => ['Sources/SwiftUIKit/Resources/Localizable.xcstrings']}
 
 end
