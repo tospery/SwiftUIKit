@@ -18,7 +18,7 @@ import SwiftUI
 /// to disappear. For instance, JSON encoding a `Color` will
 /// not include any information about alternate color values
 /// for light and dark mode, high constrasts, etc.
-extension Array: @retroactive RawRepresentable where Element: Codable {
+extension Array: RawRepresentable where Element: Codable {
 
     public init?(rawValue: String) {
         guard
@@ -44,7 +44,7 @@ extension Array: @retroactive RawRepresentable where Element: Codable {
 /// to disappear. For instance, JSON encoding a `Color` will
 /// not include any information about alternate color values
 /// for light and dark mode, high constrasts, etc.
-extension Dictionary: @retroactive RawRepresentable where Key: Codable, Value: Codable {
+extension Dictionary: RawRepresentable where Key: Codable, Value: Codable {
 
     public init?(rawValue: String) {
         guard

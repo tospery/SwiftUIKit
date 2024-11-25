@@ -32,3 +32,8 @@ public extension Label where Icon == Image, Title == Text {
         }
     }
 }
+
+#Preview {
+    
+    Label("Preview.Label", .symbol("checkmark"), .module)
+}

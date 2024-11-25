@@ -198,4 +198,62 @@ public extension Collection where Element == Color {
         return [.clear] + standard
     }
 }
+
+#Preview {
+
+    struct Preview: View {
+
+        @State
+        private var color1: Color = .red
+
+        @State
+        private var color2: Color = .yellow
+
+        @State
+        private var color3: Color = .purple
+
+        @State
+        private var optionalColor: Color?
+
+        @State
+        var optionalDouble: Double?
+
+        var pickers: some View {
+            VStack(alignment: .leading) {
+                ColorPickerBar(
+                    value: $color1,
+                    colors: [.red, .green, .blue]
+                )
+                ColorPickerBar(
+                    value: $color2
+                )
+                ColorPickerBar(
+                    value: $color3,
+                    colors: .colorPickerBarColors(withClearColor: true)
+                )
+                ColorPickerBar(
+                    value: $optionalColor,
+                    colors: .colorPickerBarColors(withClearColor: true)
+                )
+                .colorPickerBarConfig(.init(
+                    addOpacityToPicker: false,
+                    addResetButton: true,
+                    resetButtonValue: nil
+                ))
+            }
+            .padding()
+        }
+
+        var body: some View {
+            VStack {
+                pickers
+                pickers
+                    .background(Color.black)
+                    .colorScheme(.dark)
+            }
+        }
+    }
+
+    return Preview()
+}
 #endif

@@ -82,6 +82,39 @@ private extension CircularProgressBar {
     }
 }
 
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        private var progress = 0.1
+        
+        var body: some View {
+            VStack(spacing: 30) {
+                CircularProgressBar(progress: progress)
+
+                CircularProgressBar(progress: progress)
+                .shadow(.elevated)
+                .circularProgressBarStyle(.swedish)
+                
+                CircularProgressBar(
+                    progress: progress
+                )
+                .shadow(.sticker)
+                .circularProgressBarStyle(.noText)
+                
+                Button("Preview.Progress") {
+                    progress += 0.1
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color.green.edgesIgnoringSafeArea(.all))
+        }
+    }
+    
+    return Preview()
+}
+
 @MainActor
 fileprivate extension CircularProgressBar.Style {
 

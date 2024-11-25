@@ -26,3 +26,9 @@ public extension Button where Label == SwiftUI.Label<Text, Image> {
     }
 }
 
+#Preview {
+    
+    Button("Preview.Button", .symbol("checkmark"), .module) {
+        print("Tapped!")
+    }
+}

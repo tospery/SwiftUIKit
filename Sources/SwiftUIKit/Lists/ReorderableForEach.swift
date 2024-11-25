@@ -239,4 +239,67 @@ struct ReorderableDragRelocateDelegate<Item: Reorderable>: DropDelegate {
         return true
     }
 }
+
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        private var items = (1...100).map { GridData(id: $0) }
+        
+        @State
+        private var active: GridData?
+        
+        private struct GridData: Identifiable, Equatable {
+            
+            let id: Int
+        }
+         
+        var body: some View {
+            NavigationView {
+                #if os(macOS)
+                Color.gray
+                #endif
+                if #available(iOS 16.0, *) {
+                    ScrollView(.vertical) {
+                        VStack {
+                            LazyVGrid(columns: .adaptive(minimum: 100, maximum: 150)) {
+                                ReorderableForEach(items, active: $active) { item in
+                                    shape
+                                        .fill(.thinMaterial)
+                                        .frame(height: 100)
+                                        .overlay(Text("\(item.id)"))
+                                        .contentShape(.dragPreview, shape)
+                                } preview: { item in
+                                    shape
+                                        .frame(width: 200, height: 200)
+                                        .overlay(Text("\(item.id)"))
+                                        .contentShape(.dragPreview, shape)
+                                } moveAction: { from, to in
+                                    items.move(fromOffsets: from, toOffset: to)
+                                }
+                            }
+                        }.padding()
+                    }
+                    #if os(iOS)
+                    .background(Color.blue)
+                    .scrollContentBackground(.hidden)
+                    #else
+                    .background(Color.blue)
+                    #endif
+                    .reorderableForEachContainer(active: $active)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
+        }
+        
+        var shape: some Shape {
+            RoundedRectangle(cornerRadius: 20)
+        }
+    }
+    
+    return Preview()
+}
+
 #endif

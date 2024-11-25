@@ -57,3 +57,62 @@ public struct ListShelfSection<Title: View, Content: View>: View {
     }
 }
 
+#Preview {
+    
+    struct PreviewSection: View {
+        
+        func printText() {
+            print("Tapped")
+        }
+        
+        func button(_ index: Int) -> some View {
+            Button(action: printText) {
+                Text("Preview.Button.\(index)", bundle: .module)
+            }
+        }
+        
+        var body: some View {
+            ListShelfSection {
+                ListSectionTitle("Preview.SectionTitle", bundle: .module)
+            } content: {
+                Group {
+                    Button {} label: {
+                        ListCard {
+                            Color.red
+                        } contextMenu: {
+                            button(1)
+                            button(2)
+                            button(3)
+                        }
+                    }
+                    
+                    ListCard {
+                        Color.green
+                    } contextMenu: {
+                        button(1)
+                        button(2)
+                        button(3)
+                    }
+                    
+                    ListCard {
+                        Color.blue
+                    } contextMenu: {
+                        button(1)
+                        button(2)
+                        button(3)
+                    }
+                }
+                .buttonStyle(.listCard)
+                .frame(width: 150, height: 150)
+            }
+        }
+    }
+        
+    return ScrollView(.vertical) {
+        VStack {
+            PreviewSection()
+            PreviewSection()
+            PreviewSection()
+        }
+    }
+}

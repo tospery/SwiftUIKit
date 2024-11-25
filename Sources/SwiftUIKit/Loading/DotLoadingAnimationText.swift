@@ -73,3 +73,10 @@ private extension DotLoadingAnimationText {
     }
 }
 
+#Preview {
+
+    DotLoadingAnimationText(
+        text: "Preview.LoadingNoDots",
+        bundle: .module
+    )
+}

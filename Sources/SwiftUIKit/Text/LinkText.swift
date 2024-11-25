@@ -289,4 +289,38 @@ private struct Underline: View {
         }
     }
 }
+
+#Preview {
+
+    struct PreviewText: View {
+        
+        var body: some View {
+            LinkText(
+                components: [
+                    .text("You must accept our "),
+                    .link("terms & conditions", action: { print("action 1") }),
+                    .text(". Also, we have some more "),
+                    .link("terms & conditions", action: { print("action 2") }),
+                    .text(" that you need to accept, then some "),
+                    .link("terms & conditions", action: { print("action 3") }),
+                    .text(".")
+                ]
+            )
+        }
+    }
+    
+    return List {
+        PreviewText()
+        PreviewText()
+            .foregroundColor(.red)
+            .accentColor(.green)
+        PreviewText()
+            .font(.headline.italic())
+            .linkTextStyle(.init(fontWeight: .black))
+        PreviewText()
+            .accentColor(.orange)
+            .lineSpacing(10)
+            .linkTextStyle(.plain)
+    }
+}
 #endif

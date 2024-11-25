@@ -21,7 +21,6 @@ public protocol UrlSharing: View {
 public extension UrlSharing {
     
     /// Share the provided url using a ``ShareSheet``.
-    @MainActor
     func share(_ url: URL) {
         sheet.present(ShareSheet(activityItems: [url]))
     }

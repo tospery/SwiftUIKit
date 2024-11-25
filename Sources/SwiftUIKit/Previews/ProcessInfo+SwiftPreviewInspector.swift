@@ -23,3 +23,11 @@ public extension ProcessInfo {
     }
 }
 
+#Preview {
+
+    VStack {
+        Text("Preview.IsSwiftUIPreview", bundle: .module)
+            .font(.title)
+        Text("\(ProcessInfo.processInfo.isSwiftUIPreview ? "Preview.Yes" : "Preview.No")", bundle: .module)
+    }
+}

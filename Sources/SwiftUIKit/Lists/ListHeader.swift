@@ -83,3 +83,33 @@ public extension Image {
     }
 }
 
+#Preview {
+    
+    func item() -> some View {
+        Text("Preview.Item", bundle: .module)
+    }
+    
+    return VStack {
+        List {
+            ListHeader {
+                Color.red.frame(square: 150)
+            }
+            Section {
+                item()
+                item()
+                item()
+                item()
+            }
+        }
+        List {
+            Image(systemName: "face.smiling").listHeader(height: 75)
+            Section {
+                item()
+                item()
+                item()
+                item()
+            }
+        }
+    }
+    
+}

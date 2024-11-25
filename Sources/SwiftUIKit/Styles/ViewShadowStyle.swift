@@ -96,3 +96,43 @@ public extension View {
         }
     }
 }
+
+#Preview {
+
+    struct Preview: View {
+
+        @State
+        private var isItemElevated = false
+
+        var item: some View {
+            RoundedRectangle(cornerRadius: 20)
+                .foregroundColor(.white)
+                .frame(width: 100, height: 100)
+        }
+
+        var body: some View {
+            VStack(spacing: 20) {
+                item.shadow(.none)
+                item.shadow(.badge)
+                item.shadow(.sticker)
+
+                #if os(iOS)
+                item.onTapGesture(perform: toggleElevated)
+                    .shadow(isItemElevated ? .elevated : .badge)
+                #endif
+
+                item.shadow(.elevated)
+            }
+            .padding()
+            .background(Color.gray.opacity(0.4))
+        }
+
+        func toggleElevated() {
+            withAnimation {
+                isItemElevated.toggle()
+            }
+        }
+    }
+    
+    return Preview()
+}

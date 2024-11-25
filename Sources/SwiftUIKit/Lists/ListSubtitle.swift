@@ -29,3 +29,18 @@ public struct ListSubtitle: View {
             .lineLimit(1)
     }
 }
+
+#Preview {
+    
+    List {
+        HStack {
+            Label {
+                Text("Preview.Label", bundle: .module)
+            } icon: {
+                Color.red
+            }
+            Spacer()
+            ListSubtitle("Preview.Subtitle", bundle: .module)
+        }
+    }
+}

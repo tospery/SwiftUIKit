@@ -82,3 +82,54 @@ private extension View {
         #endif
     }
 }
+
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        private var selection = [PreviewItem.all[0]]
+        
+        var body: some View {
+            NavigationView {
+                List {
+                    ForEachMultiPicker(
+                        items: PreviewItem.all,
+                        selection: $selection) { item, isSelected in
+                            ListSelectItem(isSelected: isSelected) {
+                                Text(item.name)
+                            }
+                        }
+                }
+                .withTitle("Pick multiple items")
+            }
+        }
+    }
+    
+    struct PreviewItem: Identifiable, Equatable {
+        
+        let name: String
+        
+        var id: String { name }
+        
+        static let all = [
+            PreviewItem(name: "Item #1"),
+            PreviewItem(name: "Item #2"),
+            PreviewItem(name: "Item #3"),
+            PreviewItem(name: "Item #4"),
+            PreviewItem(name: "Item #5"),
+            PreviewItem(name: "Item #6"),
+            PreviewItem(name: "Item #7"),
+            PreviewItem(name: "Item #8"),
+            PreviewItem(name: "Item #9"),
+            PreviewItem(name: "Item #10"),
+            PreviewItem(name: "Item #11"),
+            PreviewItem(name: "Item #12"),
+            PreviewItem(name: "Item #13"),
+            PreviewItem(name: "Item #14"),
+            PreviewItem(name: "Item #15")
+        ]
+    }
+    
+    return Preview()
+}

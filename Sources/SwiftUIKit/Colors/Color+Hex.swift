@@ -55,6 +55,31 @@ public extension Color {
     }
 }
 
+#Preview {
+
+    struct Preview: View {
+
+        @State private var font = ""
+
+        var body: some View {
+            VStack {
+                Color(hex: "0xabcdef")
+                Color(hex: "#abcdef", alpha: 0)
+                Color(hex: "#abcdef", alpha: 0.5)
+                Color(hex: "#abcdef", alpha: 1)
+                Color(hex: 0x000000).frame(height: 10)
+                Color(hex: 0xffffff).frame(height: 10)
+                Color(hex: 0xabcdef)
+                Color(hex: 0xabcdef, alpha: 0)
+                Color(hex: 0xabcdef, alpha: 0.5)
+                Color(hex: 0xabcdef, alpha: 1)
+            }.padding()
+        }
+    }
+
+    return Preview()
+}
+
 /// This extension extends `ColorRepresentable` with ways to
 /// be created with hex strings and int values.
 public extension ColorRepresentable {

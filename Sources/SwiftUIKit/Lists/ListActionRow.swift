@@ -58,4 +58,38 @@ public struct ListActionRow: View {
         }
     }
 }
+
+#Preview {
+    
+    List {
+        ListActionRow(
+            title: "Preview.Title.\(1)",
+            text: "Preview.Text.\(1)",
+            bundle: .module,
+            action: .call(phoneNumber: "1234")
+        )
+        
+        ListActionRow(
+            title: "Preview.Title.\(2)",
+            text: "Preview.Text.\(2)",
+            bundle: .module,
+            action: .copy("")
+        )
+        .buttonStyle(.borderedProminent)
+        
+        ListActionRow(
+            title: "Preview.Title.\(3)",
+            text: "Preview.Text.Long",
+            bundle: .module,
+            action: .email(address: "")
+        )
+        
+        ListActionRow(
+            title: "Preview.Title.\(4)",
+            text: "Preview.Text.\(4)",
+            bundle: .module,
+            action: nil
+        )
+    }
+}
 #endif

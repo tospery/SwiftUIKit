@@ -68,3 +68,42 @@ public struct ListSelectItem<Content: View, SelectIndicator: View>: View {
     }
 }
 
+#Preview {
+    
+    struct Preview: View {
+        
+        @State
+        private var selection = 0
+        
+        var body: some View {
+            List {
+                ForEach(0...10, id: \.self) { index in
+                    Group {
+                        ListSelectItem(isSelected: index == selection) {
+                            Image.symbol("\(index).circle")
+                                .label(
+                                    "Preview.Item.\(index)",
+                                    bundle: .module
+                                )
+                        }
+                        ListSelectItem(
+                            isSelected: index == selection,
+                            selectIndicator: Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.green)
+                        ) {
+                            Image.symbol("\(index).circle")
+                                .label("Preview.Item.\(index)", bundle: .module)
+                        }
+                    }
+                    #if os(iOS) || os(macOS) || os(visionOS)
+                    .onTapGesture {
+                        selection = index
+                    }
+                    #endif
+                }
+            }
+        }
+    }
+    
+    return Preview()
+}

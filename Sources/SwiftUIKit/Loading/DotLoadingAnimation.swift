@@ -74,3 +74,8 @@ private extension DotLoadingAnimation {
         currentDotCount = newCount
     }
 }
+
+#Preview {
+
+    DotLoadingAnimation()
+}
