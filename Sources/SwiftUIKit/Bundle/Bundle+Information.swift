@@ -28,4 +28,8 @@ public extension Bundle {
         let version = infoDictionary?[key] as? String
         return version ?? "0.0.0"
     }
+    
+    /// Use for internal
+    internal static let module: Bundle = { .main }()
+    
 }

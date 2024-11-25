@@ -1,5 +1,5 @@
 PODS:
-  - SwiftUIKit-Hi (5.0.0-v2)
+  - SwiftUIKit-Hi (5.0.0.1)
 
 DEPENDENCIES:
   - SwiftUIKit-Hi (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SwiftUIKit-Hi: 3587728b5152e4eafa9c25531003d20cc656e3a7
+  SwiftUIKit-Hi: 43b5df4f366354f37deacfe77477113f6b4f47c6
 
 PODFILE CHECKSUM: f356040ebb4633d2ca8688e6e405f612c59a1192
 
