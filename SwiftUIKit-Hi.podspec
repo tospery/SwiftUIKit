@@ -13,9 +13,6 @@ A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, 
   s.requires_arc = true
   s.swift_version = '5.0'
   s.ios.deployment_target = '15.0'
-  s.tvos.deployment_target = '15.0'
-  s.watchos.deployment_target = '8.0'
-  s.osx.deployment_target = '12.0'
 
   s.frameworks = 'Foundation', 'UIKit', 'SwiftUI'
   s.source_files = "Sources/SwiftUIKit/**/*.{swift}"
