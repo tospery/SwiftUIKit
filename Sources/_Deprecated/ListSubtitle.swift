@@ -3,12 +3,12 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-02-04.
-//  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2022-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
-/// This view can be used as a trailing list row subtitle.
+@available(*, deprecated, message: "Use LabeledContent instead.")
 public struct ListSubtitle: View {
 
     public init(
@@ -27,20 +27,5 @@ public struct ListSubtitle: View {
             .font(.footnote)
             .foregroundColor(.secondary)
             .lineLimit(1)
-    }
-}
-
-#Preview {
-    
-    List {
-        HStack {
-            Label {
-                Text("Preview.Label", bundle: .module)
-            } icon: {
-                Color.red
-            }
-            Spacer()
-            ListSubtitle("Preview.Subtitle", bundle: .module)
-        }
     }
 }

@@ -3,13 +3,15 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2016-11-24.
-//  Copyright © 2016-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2016-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
-/// This class can generate a unique device identifier, that
-/// is persisted even when uninstalling the app.
+/// This class can generate a unique device identifier that is persisted in both user
+/// defaults and the user keychain.
+///
+/// This means that the identifier will be persisted even when uninstalling the app.
 open class DeviceIdentifier {
     
     /// Create a device identifier.
@@ -34,9 +36,8 @@ open class DeviceIdentifier {
     
     /// Get a unique device identifier from any store.
     ///
-    /// If no device identifier exists, this identifier will
-    /// generate a new identifier and persist it in both the
-    /// keychain and in user defaults.
+    /// If no device identifier exists, an identifier will be generated and persisted
+    /// in both the keychain and in user defaults.
     open func getDeviceIdentifier() -> String {
         let keychainId = keychainService.string(for: key, with: accessibility)
         let storeId = store.string(forKey: key)

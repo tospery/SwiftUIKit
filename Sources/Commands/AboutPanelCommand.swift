@@ -3,15 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-11-21.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(macOS)
 import SwiftUI
 
-/**
- This command can be used to open the macOS About Panel.
- */
+/// This command can be used to open the macOS About Panel.
 public struct AboutPanelCommand: Commands {
     
     /// Create an About Panel command with panel properties.

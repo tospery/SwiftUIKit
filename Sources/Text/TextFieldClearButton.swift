@@ -3,18 +3,16 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-12-18.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
 import SwiftUI
 
-/**
- This view modifier adds a clear button to any `TextField`.
-
- You can apply it with `.modifier(TextFieldClearButton(...))`
- or the custom `.withClearButton(for: $text)`.
- */
+/// This view modifier adds a clear button to any `TextField`.
+///
+/// You can apply it with `.modifier(TextFieldClearButton(...))`, or
+/// the custom `.withClearButton(for: $text)`.
 public struct TextFieldClearButton: ViewModifier {
 
     public init(
@@ -43,10 +41,11 @@ public struct TextFieldClearButton: ViewModifier {
     }
 }
 
+@MainActor
 public extension TextField {
 
-    /// Add a trailing ``TextFieldClearButton`` to this text
-    /// field, that can be used to clear the text binding.
+    /// Add a trailing ``TextFieldClearButton`` to this text field, that can
+    /// be used to clear the text binding.
     func withClearButton(
         for text: Binding<String>,
         _ animation: Animation? = nil
@@ -58,33 +57,5 @@ public extension TextField {
             )
         )
     }
-}
-
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var text = ""
-        
-        var placeholder: String {
-            .init(localized: "Preview.Placeholder", bundle: .module)
-        }
-
-        var body: some View {
-            VStack {
-                TextField(placeholder, text: $text)
-                    .withClearButton(for: $text)
-                TextField(placeholder, text: $text)
-                    .withClearButton(
-                        for: $text,
-                        .bouncy(duration: 1, extraBounce: 0.1)
-                    )
-            }
-            .textFieldStyle(.roundedBorder)
-        }
-    }
-
-    return Preview()
 }
 #endif

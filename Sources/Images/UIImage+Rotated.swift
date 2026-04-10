@@ -3,10 +3,10 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-17.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
-#if os(iOS)
+#if canImport(UIKit)
 import UIKit
 
 public extension UIImage {
@@ -19,7 +19,7 @@ public extension UIImage {
             .applying(transform)
             .size
         
-        // Trim off the small float values to prevent core graphics from rounding it up
+        // Trim off small float fractions to prevent rounding
         newSize.width = floor(newSize.width)
         newSize.height = floor(newSize.height)
 

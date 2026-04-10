@@ -3,19 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-03-26.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 import UniformTypeIdentifiers
 
-/**
- This enum represents a set of different MIME and file types.
- 
- Note that some types may be expected to be a different type,
- but are instead an `.application` type. For instance, `json`
- is a text format, but the mime type is `application/json`.
- */
+/// This enum defines different MIME and file types.
 public enum MimeType: Identifiable {
     
     case

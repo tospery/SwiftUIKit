@@ -3,15 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2016-11-24.
-//  Copyright © 2016-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2016-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
-/**
- This class can be used to read from and write to the device
- keychain, using a ``KeychainWrapper``.
- */
+/// This class can be used to read from and write to the device keychain, using a
+/// ``KeychainWrapper`` instance.
 open class KeychainService {
     
     public init(

@@ -8,9 +8,7 @@ SwiftUIKit adds extra functionality to `SwiftUI`.
 
 ![SwiftUIKit logo](Logo.png)
 
-SwiftUIKit is a Swift SDK that adds extra functionality to `SwiftUI` and `Swift`. It contains additional components, a lot of extensions to native types, and much more. 
-
-The library is divided into the namespaces found in the Topics section below. For more information, source code, issues, to sponsor the project etc., visit the [project repository][Repository].
+SwiftUIKit is a library that adds extra functionality to Swift and SwiftUI. It contains additional components, a lot of extensions to native types, and much more.  The library is divided into the namespaces found in the Topics section below.
 
 
 
@@ -22,7 +20,11 @@ SwiftUIKit can be installed with the Swift Package Manager:
 https://github.com/danielsaidi/SwiftUIKit.git
 ```
 
-If you prefer to not have external dependencies, you can also just copy the source code into your app.
+
+
+## Support My Work
+
+You can [become a sponsor][Sponsors] to help me dedicate more time on my various [open-source tools][OpenSource]. Every contribution, no matter the size, makes a real difference in keeping these tools free and actively developed.
 
 
 
@@ -42,26 +44,22 @@ For more information, source code, etc., visit the [project repository][Reposito
 
 ## License
 
-SwiftUIKit is available under the MIT license. See the [LICENSE][License] file for more info.
+SwiftUIKit is available under the MIT license.
 
 
 
 ## Topics
 
-### Cameras
-
-- ``DocumentCamera``
-- ``PhotoCamera``
-
 ### Colors
 
+- ``SwiftUICore/Color``
 - ``ColorRepresentable``
 
 ### Data
 
 - ``CsvParser``
+- ``FetchedDataView``
 - ``MimeType``
-- ``ScanCodeType``
 - ``StorageValue``
 - ``AppStorageValue``
 - ``SceneStorageValue``
@@ -69,11 +67,6 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 ### Device
 
 - ``DeviceIdentifier``
-
-### Errors
-
-- ``ErrorAlerter``
-- ``ErrorAlertConvertible``
 
 ### Files
 
@@ -83,22 +76,14 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``DirectoryObservable``
 - ``iCloudDocumentSync``
 
-### Flip
-
-- ``FlipView``
-- ``FlipDirection``
-
 ### Fonts
 
+- ``SwiftUICore/Font``
 - ``FontRepresentable``
-
-### Gestures
-
-- ``GestureTimer``
-- ``SwipeGestureViewModifier``
 
 ### Images
 
+- ``SwiftUICore/Image``
 - ``ImageCache``
 - ``ImageRepresentable``
 
@@ -108,86 +93,27 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 - ``KeychainService``
 - ``KeychainWrapper``
 
-### Loading
-
-- ``DotLoadingAnimation``
-- ``DotLoadingAnimationText``
-
 ### Lists
 
-- ``ListAction``
-- ``ListActionRow``
 - ``ListButtonGroup``
 - ``ListButtonGroupStyle``
-- ``ListButtonStyle``
 - ``ListCard``
 - ``ListCardButtonStyle``
 - ``ListCardStyle``
 - ``ListDragHandle``
+- ``ListFooter``
 - ``ListHeader``
-- ``ListPadding``
 - ``ListSectionTitle``
 - ``ListSelectItem``
 - ``ListShelfSection``
 - ``ListShelfSectionStyle``
-- ``ListSubtitle``
 - ``Reorderable``
 - ``ReorderableForEach``
 - ``SidebarListRowBackgroundModifier``
 
-### Navigation
-
-- ``NavigationButton``
-- ``NavigationContext``
-- ``NavigationLinkArrow``
-
-### Pages
-
-- ``PageIndicator``
-- ``PageIndicatorDisplayMode``
-- ``PageIndicatorStyle``
-- ``PageView``
-
-### Pasteboard
-
-- ``Pasteboard``
-
-### Pickers
-
-- ``ColorPickerBar``
-- ``FilePicker``
-- ``ForEachPicker``
-- ``ForEachMultiPicker``
-- ``ImagePicker``
-- ``ListPicker``
-- ``ListMultiPicker``
-- ``ListPickerItem``
-- ``ListPickerSection``
-- ``OptionalBinding(_:_:)``
-- ``SystemFontPicker``
-- ``SystemFontForEachPicker``
-- ``SystemFontListPicker``
-- ``SystemFontPickerFont``
-- ``SystemFontPickerItem``
-
-### Presentation
-
-- ``PresentationContext``
-- ``AlertContext``
-- ``AlertContextFocusedValueKey``
-- ``FullScreenCoverContext``
-- ``FullScreenCoverContextFocusedValueKey``
-- ``SheetContext``
-- ``SheetContextFocusedValueKey``
-
 ### Previews
 
-- ``SwiftPreviewInspector``
-
-### Progress
-
-- ``CircularProgressBar``
-- ``LinearProgressBar``
+- ``SwiftUIPreviewInspector``
 
 ### Regex
 
@@ -196,30 +122,29 @@ SwiftUIKit is available under the MIT license. See the [LICENSE][License] file f
 ### Sharing
 
 - ``ShareSheet``
-- ``UrlSharing``
 
 ### Styles
 
-- ``CornerRadiusStyle``
-- ``FontStyle``
 - ``ViewShadowStyle``
 
 ### Text
 
-- ``LinkText``
+- ``SwiftUICore/Text``
 - ``MultilineSubmitViewModifier``
 - ``TextEditorStyle``
 - ``TextFieldClearButton``
 
 ### Views
 
-- ``CustomRoundedRectangle``
+- ``SwiftUICore/View``
 - ``EditableView``
-- ``FetchedDataView``
-- ``TextReplacement``
 
 
 
-[License]: https://github.com/danielsaidi/SwiftUIKit/blob/master/LICENSE
 [Repository]: https://github.com/danielsaidi/SwiftUIKit
+
+[Email]: mailto:daniel.saidi@gmail.com
+[Website]: https://danielsaidi.com
+[GitHub]: https://github.com/danielsaidi
 [OpenSource]: https://danielsaidi.com/opensource
+[Sponsors]: https://github.com/sponsors/danielsaidi

@@ -3,17 +3,14 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2024-03-15.
-//  Copyright © 2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2024-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
 import SwiftUI
 
-/// This group applies zero insets and a clear background to
-/// render buttons in the content as a horizontal group.
-///
-/// An example of a similar group in the iOS platform is the
-/// quick action button group in the Contact form.
+/// This group applies zero insets and a clear background to render buttons in the
+/// content as a horizontal group.
 ///
 /// You can style the view with `.listButtonGroupStyle(...)`.
 public struct ListButtonGroup<Content: View>: View {
@@ -41,46 +38,6 @@ public struct ListButtonGroup<Content: View>: View {
         .listRowInsets(.init(all: 0))
         .listRowBackground(Color.clear)
     }
-}
-
-#Preview {
-    
-    struct PreviewList: View {
-        
-        var body: some View {
-            List {
-                "Add something".previewButton(.add)
-                
-                ListButtonGroup {
-                    HStack {
-                        "Bug".previewButton(.bug)
-                        "Camera".previewButton(.camera).disabled(true)
-                        "Photos".previewButton(.camera).opacity(0.5)
-                        "Feedback".previewButton(.feedback)
-                    }
-                }
-                
-                Section {
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                    Text("Preview.Row")
-                }
-            }
-        }
-    }
-    
-    return VStack(spacing: 0) {
-        PreviewList()
-        Divider()
-        PreviewList()
-            .listButtonGroupStyle(.swedish)
-        Divider()
-        PreviewList()
-            .environment(\.colorScheme, .dark)
-    }
-    .frame(maxHeight: .infinity)
-    .background(Color.black.opacity(0.08).ignoresSafeArea())
 }
 
 private extension ButtonStyle where Self == ListButtonGroupStyle {

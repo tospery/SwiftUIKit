@@ -3,32 +3,27 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-03-05.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
-/**
- This styles defines shadow values, to allow strong typing.
- 
- You can specify your own standard styles by creating static,
- calculated extension properties, for instance:
- 
- ```swift
- extension ShadowStyle {
- 
-     static let badge = Self(
-         color: Color.black.opacity(0.1),
-         radius: 3,
-         x: 0,
-         y: 2
-     )
- }
- ```
- 
- You can apply the style with the `.font(_ style:)` modifier.
- ```
- */
+/// This styles defines shadow types, to allow strong typing.
+///
+/// You can specify your own styles by creating new static properties, for instance:
+///
+/// ```swift
+/// extension ShadowStyle {
+///     static let badge = Self(
+///         color: Color.black.opacity(0.1),
+///         radius: 3,
+///         x: 0,
+///         y: 2
+///     )
+/// }
+/// ```
+///
+/// You can apply shadows with the `font(_ style:)` modifier.
 public struct ViewShadowStyle {
     
     public init(
@@ -56,20 +51,17 @@ public extension ViewShadowStyle {
         .init(color: .clear)
     }
 
-    /// The shadow of a badge that is attached to its parent
-    /// view, but in a slightly separated layer.
+    /// The shadow of a badge that is attached to its parent, in a separate layer.
     static var badge: Self {
         .init(radius: 1, y: 1)
     }
 
-    /// The shadow of a solid element that is elevated a bit
-    /// above its parent view.
+    /// The shadow of a view that is elevated a bit above its parent view.
     static var elevated: Self {
         .init(radius: 3, x: 0, y: 2)
     }
 
-    /// The shadow of a thin sticker that is attached to its
-    /// parent view.
+    /// The shadow of a thin sticker that is attached to its parent view.
     static var sticker: Self {
         .init(radius: 0, y: 1)
     }
@@ -95,44 +87,4 @@ public extension View {
             )
         }
     }
-}
-
-#Preview {
-
-    struct Preview: View {
-
-        @State
-        private var isItemElevated = false
-
-        var item: some View {
-            RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.white)
-                .frame(width: 100, height: 100)
-        }
-
-        var body: some View {
-            VStack(spacing: 20) {
-                item.shadow(.none)
-                item.shadow(.badge)
-                item.shadow(.sticker)
-
-                #if os(iOS)
-                item.onTapGesture(perform: toggleElevated)
-                    .shadow(isItemElevated ? .elevated : .badge)
-                #endif
-
-                item.shadow(.elevated)
-            }
-            .padding()
-            .background(Color.gray.opacity(0.4))
-        }
-
-        func toggleElevated() {
-            withAnimation {
-                isItemElevated.toggle()
-            }
-        }
-    }
-    
-    return Preview()
 }

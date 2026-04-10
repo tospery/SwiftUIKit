@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-08-01.
-//  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2022-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
@@ -33,18 +33,4 @@ public extension View {
             self
         }
     }
-}
-
-#Preview {
-
-    VStack {
-        #if os(iOS) || os(macOS)
-        Menu("Preview.Menu") {
-            Button("Preview.Button.\(1)") {}
-            Button("Preview.Button.\(2)") {}
-        }
-        .prefersMenuOrderFixed()
-        #endif
-    }
-    .prefersPersistentSystemOverlaysHidden()
 }

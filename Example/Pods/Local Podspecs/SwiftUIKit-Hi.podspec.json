@@ -1,6 +1,6 @@
 {
   "name": "SwiftUIKit-Hi",
-  "version": "5.0.0.1",
+  "version": "6.1.0",
   "summary": "A library providing SwiftUI extensions and utilities.",
   "description": "A Swift library designed for iOS, tvOS, watchOS, macOS, and visionOS platforms, offering useful SwiftUI extensions and utilities.",
   "homepage": "https://github.com/tospery/SwiftUIKit",
@@ -13,18 +13,18 @@
   },
   "source": {
     "git": "https://github.com/tospery/SwiftUIKit.git",
-    "tag": "5.0.0.1"
+    "tag": "6.1.0"
   },
   "requires_arc": true,
   "swift_versions": "5.0",
   "platforms": {
-    "ios": "15.0"
+    "ios": "16.0"
   },
   "frameworks": [
     "Foundation",
     "UIKit",
     "SwiftUI"
   ],
-  "source_files": "Sources/SwiftUIKit/**/*.{swift}",
+  "source_files": "Sources/**/*.{swift}",
   "swift_version": "5.0"
 }

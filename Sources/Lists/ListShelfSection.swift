@@ -3,15 +3,12 @@
 //  KeyboardKit
 //
 //  Created by Daniel Saidi on 2023-04-26.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
-/**
- This view can be used to add a horizontally scrolling shelf
- to a vertically scrolling list.
- */
+/// This view can be used to add a horizontally scrolling shelf to a vertical list.
 public struct ListShelfSection<Title: View, Content: View>: View {
 
     /// Create a list shelf section.
@@ -53,66 +50,6 @@ public struct ListShelfSection<Title: View, Content: View>: View {
             }
             .padding(.vertical, -shadowSpacing)
             .padding(.bottom, style.rowSpacing)
-        }
-    }
-}
-
-#Preview {
-    
-    struct PreviewSection: View {
-        
-        func printText() {
-            print("Tapped")
-        }
-        
-        func button(_ index: Int) -> some View {
-            Button(action: printText) {
-                Text("Preview.Button.\(index)", bundle: .module)
-            }
-        }
-        
-        var body: some View {
-            ListShelfSection {
-                ListSectionTitle("Preview.SectionTitle", bundle: .module)
-            } content: {
-                Group {
-                    Button {} label: {
-                        ListCard {
-                            Color.red
-                        } contextMenu: {
-                            button(1)
-                            button(2)
-                            button(3)
-                        }
-                    }
-                    
-                    ListCard {
-                        Color.green
-                    } contextMenu: {
-                        button(1)
-                        button(2)
-                        button(3)
-                    }
-                    
-                    ListCard {
-                        Color.blue
-                    } contextMenu: {
-                        button(1)
-                        button(2)
-                        button(3)
-                    }
-                }
-                .buttonStyle(.listCard)
-                .frame(width: 150, height: 150)
-            }
-        }
-    }
-        
-    return ScrollView(.vertical) {
-        VStack {
-            PreviewSection()
-            PreviewSection()
-            PreviewSection()
         }
     }
 }

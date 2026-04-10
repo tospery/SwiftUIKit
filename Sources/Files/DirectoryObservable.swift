@@ -3,18 +3,19 @@
 //  MetaNotes
 //
 //  Created by Daniel Saidi on 2021-04-17.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 //  Original implementation:
 //  https://medium.com/over-engineering/monitoring-a-folder-for-changes-in-ios-dc3f8614f902
 //
 
-import Foundation
+import Combine
+import SwiftUI
 
 /// This class can observe file system changes for a folder.
 ///
-/// The view uses an internal ``DirectoryMonitor`` instance,
-/// to keep the ``files`` property in sync.
+/// The view uses an internal ``DirectoryMonitor`` to keep the ``files``
+/// property in sync.
 @MainActor
 public class DirectoryObservable: ObservableObject {
     
@@ -33,9 +34,8 @@ public class DirectoryObservable: ObservableObject {
         self.handleChanges()
     }
     
-    @Published
-    public var files: [URL] = []
-    
+    @Published public var files: [URL] = []
+
     private let url: URL
     private let fileManager: FileManager
     

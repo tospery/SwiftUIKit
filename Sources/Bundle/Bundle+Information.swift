@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-06-09.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
@@ -28,8 +28,5 @@ public extension Bundle {
         let version = infoDictionary?[key] as? String
         return version ?? "0.0.0"
     }
-    
-    /// Use for internal
-    internal static let module: Bundle = { .main }()
-    
+
 }

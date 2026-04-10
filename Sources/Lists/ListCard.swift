@@ -3,15 +3,15 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-04-26.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
-/// This view can be used as floating cards in lists & grids.
+/// This view can be used as floating cards in lists and grids.
 ///
-/// The card can be styled with a corner radius and a shadow,
-/// and can be provided with a list of context menu items.
+/// The card can be styled with a corner radius and shadow, and can be provided
+/// with a list of context menu items.
 public struct ListCard<Content: View, ContextMenuView: View>: View {
 
     /// Create a list card.
@@ -75,35 +75,5 @@ public extension ViewShadowStyle {
             x: 0,
             y: 2
         )
-    }
-}
-
-#Preview {
-    
-    VStack {
-        Group {
-            Button {} label: {
-                ListCard {
-                    Color.red.frame(width: 200, height: 200)
-                }
-            }
-            .buttonStyle(
-                .listCard(
-                    animation: .bouncy,
-                    pressedScale: 0.2
-                )
-            )
-            Button {} label: {
-                ListCard {
-                    Color.red.frame(width: 200, height: 200)
-                } contextMenu: {
-                    Button("Preview.Button") {}
-                }
-            }
-        }
-        .buttonStyle(.listCard)
-        .padding(50)
-        .background(Color.gray)
-        .cornerRadius(20)
     }
 }

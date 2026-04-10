@@ -3,18 +3,17 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-29.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
 public extension String {
     
-    /// Looks back from a certain location to find the index
-    /// of the first new line paragraph before that location.
+    /// Find the index of the first new line paragraph before the provided location.
     ///
-    /// A new paragraph is considered to start the character
-    /// after the newline char, not the newline itself.
+    /// A new paragraph is considered to start the character after a newline char,
+    /// not the newline itself.
     func findIndexOfCurrentParagraph(from location: UInt) -> UInt {
         if isEmpty { return 0 }
         let count = UInt(count)
@@ -27,12 +26,11 @@ public extension String {
         } while true
         return max(index, 0)
     }
-    
-    /// Look ahead from a certain location to find the index
-    /// of the first new line paragraph after that location.
+
+    /// Find the index of the first new line paragraph after the provided location.
     ///
-    /// A new paragraph is considered to start the character
-    /// after the newline char, not the newline itself. 
+    /// A new paragraph is considered to start the character after a newline char,
+    /// not the newline itself.  
     func findIndexOfNextParagraph(from location: UInt) -> UInt {
         var index = location
         repeat {

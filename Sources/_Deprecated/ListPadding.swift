@@ -3,12 +3,12 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-08-30.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
 
-/// This view can be used to add vertical padding to a `List`.
+@available(*, deprecated, message: "Add padding to the section header instead.")
 public struct ListPadding: View {
     
     public init(height: CGFloat) {

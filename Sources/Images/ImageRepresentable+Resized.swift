@@ -3,42 +3,39 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2022-06-29.
-//  Copyright © 2022-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2022-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
-#if canImport(AppKit)
-import AppKit
+#if canImport(UIKit)
+import UIKit
 
-public extension NSImage {
+public extension ImageRepresentable {
 
     /// Create a resized copy of the image.
-    func resized(to newSize: CGSize) -> NSImage? {
-        let newImage = NSImage(size: newSize)
+    func resized(to size: CGSize) -> ImageRepresentable? {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+}
+#elseif canImport(AppKit)
+import AppKit
+
+public extension ImageRepresentable {
+
+    /// Create a resized copy of the image.
+    func resized(to newSize: CGSize) -> ImageRepresentable? {
+        let newImage = ImageRepresentable(size: newSize)
         newImage.lockFocus()
         let sourceRect = NSRect(x: 0, y: 0, width: size.width, height: size.height)
         let destRect = NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
         draw(in: destRect, from: sourceRect, operation: .sourceOver, fraction: CGFloat(1))
         newImage.unlockFocus()
         return newImage
-    }
-}
-#endif
-
-
-#if canImport(UIKit)
-import UIKit
-
-public extension UIImage {
-
-    /// Create a resized copy of the image.
-    func resized(to size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let result = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
     }
 }
 #endif

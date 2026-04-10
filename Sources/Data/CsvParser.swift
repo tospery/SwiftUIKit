@@ -3,17 +3,15 @@
 //  SwiftKit
 //
 //  Created by Daniel Saidi on 2018-10-23.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
-/**
- This type can parse comma-separated value files and strings.
-
- When parsing a CSV file or string, every line will be split
- up into components, using the provided `componentSeparator`.
- */
+/// This type can parse comma-separated value files and strings.
+///
+/// When parsing a CSV file or string, each line will be split up into components by
+/// splitting the string with the provided `componentSeparator`.
 public class CsvParser {
 
     /// Create a CSV parser.
@@ -38,7 +36,7 @@ public class CsvParser {
     ///
     /// - Parameters:
     ///   - fileName: The name of the file to parse.
-    ///   - fileExtension: The extension of the file to parse.
+    ///   - ext: The extension of the file to parse.
     ///   - bundle: The bundle in which the file is located.
     ///   - componentSeparator: The separator that separates components on each line.
     public func parseCsvFile(

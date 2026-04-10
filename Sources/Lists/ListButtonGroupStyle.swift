@@ -3,14 +3,14 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-08-02.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
 import SwiftUI
 
-/// This button style can generate inline button groups that
-/// mimics the look of the topmost iOS Contact buttons.
+/// This button style can generate inline button groups that mimics the look of the
+/// topmost iOS Contact button group.
 public struct ListButtonGroupStyle: ButtonStyle {
     
     /// Create a custom form group button style.

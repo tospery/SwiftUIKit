@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2016-12-12.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 //  https://danielsaidi.com/blog/2020/06/04/string-urlencode
 //
@@ -22,7 +22,7 @@ public extension String {
 
     /// Encode the string to work with quary parameters.
     ///
-    /// This uses `addingPercentEncoding` & `.urlPathAllowed`
+    /// This uses `addingPercentEncoding` and `.urlPathAllowed`,
     /// then replaces every `&` with `%26`.
     func urlEncoded() -> String? {
         self.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)?

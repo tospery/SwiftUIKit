@@ -3,17 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2021-11-29.
-//  Copyright © 2021-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2021-2025 Daniel Saidi. All rights reserved.
 //
 
 import Foundation
 
-/**
- This extension makes it possible to fetch characters from a
- string, as discussed here:
- 
- https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
- */
+/// This makes it possible to fetch characters from a string, as discussed here:
+/// https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language
 public extension StringProtocol {
     
     func character(

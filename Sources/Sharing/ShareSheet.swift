@@ -3,19 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2020-01-29.
-//  Copyright © 2020-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2020-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS)
 import SwiftUI
 
-/**
- This sheet can be used to present `UIActivityViewController`
- modals for any kind of shareable content.
- 
- You can use a ``SheetContext`` to easily present this sheet
- as a modal sheet.
- */
+/// This sheet can present a `UIActivityViewController` when sharing.
 public struct ShareSheet: UIViewControllerRepresentable {
     
     public init(

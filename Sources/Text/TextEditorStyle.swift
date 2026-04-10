@@ -3,15 +3,13 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-05-23.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 #if os(iOS) || os(macOS)
 import SwiftUI
 
-/**
- This enum defines various `TextEditor` styles.
- */
+/// This enum defines various `TextEditor` styles.
 public enum TextEditorStyle {
 
     /// The standard, borderless style.
@@ -31,8 +29,7 @@ public extension TextEditor {
 
     /// Apply a ``TextEditorStyle`` to a text editor.
     ///
-    /// Due to how the modifier works, it must be applied to
-    /// the `TextEditor` directly.
+    /// Due to how the modifier works, it must be applied to the `TextEditor`.
     @ViewBuilder
     func textEditorStyle(_ style: TextEditorStyle) -> some View {
         switch style {
@@ -59,30 +56,5 @@ private extension TextEditor {
         RoundedRectangle(cornerRadius: cornerRadius)
             .stroke(color, lineWidth: lineWidth)
     }
-}
-
-#Preview {
-    
-    struct Preview: View {
-        
-        @State
-        var text: String = "Hello, world"
-        
-        var body: some View {
-            VStack {
-                TextField("", text: $text)
-                    .textFieldStyle(.roundedBorder)
-                TextEditor(text: $text)
-                    .textEditorStyle(.roundedBorder)
-                TextEditor(text: $text)
-                    .textEditorStyle(.roundedColorBorder(.red, 5))
-            }
-            .padding(10)
-            .background(Color.primary.colorInvert())
-            // .environment(\.colorScheme, .dark)
-        }
-    }
-    
-    return Preview()
 }
 #endif

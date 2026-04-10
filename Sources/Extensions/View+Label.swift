@@ -3,7 +3,7 @@
 //  SwiftUIKit
 //
 //  Created by Daniel Saidi on 2023-12-19.
-//  Copyright © 2023-2024 Daniel Saidi. All rights reserved.
+//  Copyright © 2023-2025 Daniel Saidi. All rights reserved.
 //
 
 import SwiftUI
@@ -14,6 +14,7 @@ public extension View {
     ///
     /// - Parameters:
     ///   - text: The label text.
+    ///   - bundle: An optional bundle.
     func label(
         _ text: LocalizedStringKey,
         bundle: Bundle? = nil
@@ -36,15 +37,4 @@ public extension View {
             self
         }
     }
-}
-
-#Preview {
-    
-    VStack {
-        Color.red
-            .label("Preview.Label", bundle: .module)
-        Image.symbol("checkmark")
-            .label("Preview.Label", bundle: .module)
-    }
-    .frame(width: 200, height: 100)
 }
